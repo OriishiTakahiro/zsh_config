@@ -36,8 +36,13 @@ eval "$(pyenv init -)"
 # for Neovim
 export XDG_CACHE_HOME="$HOME/.cache"
 
+# for git-radar
+path=($path $HOME/.zsh/git-radar(N-/))
+export GIT_RADAR_FETCH_TIME=30
+
 export LANG=ja_JP.UTF-8
 export EDITOR=nvim
+RPROMPT="$RPROMPT: \S(git-radar --zsh--fetch)"
 
 
 ### aliases ###
