@@ -52,3 +52,9 @@ fi
 alias graph="log --decorate --graph --name-status --oneline"
 alias grep="grep --color=auto"
 alias vim="nvim"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/takahiro/google-cloud-sdk/path.zsh.inc' ]; then . '/home/takahiro/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/takahiro/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/takahiro/google-cloud-sdk/completion.zsh.inc'; fi

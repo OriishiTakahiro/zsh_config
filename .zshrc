@@ -34,19 +34,16 @@ export TERM=xterm-256color
 # PROMPT="%/%% "
 PROMPT="%B%F{111}${HOST}: %~%f%b
 %F{040}${USER}%f%B%F{041} ❯❯%f%b "
-RPROMPT="%F{158}[%D{%m/%d %T}]%f"
+#RPROMPT="%F{158}[%D{%m/%d %T}]%f"
 SPROMPT="%r is correct? [n,y,a,e]: "
 
 ### display git info at zsh ###
 zstyle ':completion:*:*:kill:*:process' list-colors '=(#b) #([%0-9])*=0=01;31'
-#zstyle ':vcs_info:git:*' check-for-changes true
-#zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
-#zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
-#zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
-#zstyle ':vcs_info:*' actionformats '[%b|%a]'
-
 zstyle ':completion:*' menu select
 zstyle ':completion:*' use-cache yes
+
+screenfetch
+
 # precmd () { vcs_info }
 # __git_files() { _files }
 #RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
@@ -65,9 +62,6 @@ zstyle ':completion:*' use-cache yes
     #unset timer
   #fi
 #}
-
-
-screenfetch
 
 #if type zprof > /dev/null 2>&1; then
   #zprof | less
