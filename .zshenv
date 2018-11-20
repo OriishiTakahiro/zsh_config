@@ -40,6 +40,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 path=($path $HOME/.zsh/git-radar(N-/))
 export GIT_RADAR_FETCH_TIME=30
 
+# for yarn
+path=($path `yarn global bin`(N-/))
+
 export LANG=ja_JP.UTF-8
 export EDITOR=nvim
 RPROMPT="$RPROMPT: \S(git-radar --zsh--fetch)"
