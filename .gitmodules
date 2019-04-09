@@ -1,0 +1,12 @@
+[submodule "zsh-autosuggestions"]
+	path = zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "zsh-syntax-highlighting"]
+	path = zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh-async-git-prompt"]
+	path = zsh-async-git-prompt
+	url = git@github.com:pawel-slowik/zsh-async-git-prompt.git
+[submodule "zsh-async"]
+	path = zsh-async
+	url = git@github.com:mafredri/zsh-async.git

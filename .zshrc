@@ -1,5 +1,7 @@
-source $HOME/.zsrc/load_plugins.zsh
-source $HOME/.zsrc/origin_func.zsh
+source $HOME/.zsrc/load_plugins.sh
+source $HOME/.zsrc/func.sh
+source $HOME/.zsrc/kubecomp.sh
+source $HOME/.zsrc/helmcomp.sh
 
 # for zsh (ref: http://news.mynavi.jp/column/zsh/001)
 autoload -U compinit					# for tab supplement
@@ -25,7 +27,6 @@ set termguicolors							# use truecolors
 bindkey -v										# for vim keybind
 bindkey "^P" history-incremental-search-backward
 bindkey "^N" history-incremental-search-forward
-
 
 # for using color scheme
 export TERM=xterm-256color
