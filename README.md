@@ -1,15 +1,17 @@
 # Directory Tree  
+
 .  
-├── .git  
-├── .zlogin  
-├── .zlogout  
-├── .zprofile  
-├── .zshenv  
-├── .zshrc  
 ├── README.md  
-├── mklink.sh  
-├── load_plugins.zsh  
-└── origin_func.zsh  
+├── alias.sh  
+├── func.sh  
+├── helmcomp.sh  
+├── kubecomp.sh  
+├── load_plugins.sh  
+├── mklinks.sh  
+├── zsh-async  
+├── zsh-async-git-prompt  
+├── zsh-autosuggestions  
+└── zsh-syntax-highlighting  
 
 # Usage  
 ``` sh
