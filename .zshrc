@@ -2,13 +2,12 @@ source $HOME/.zsrc/load_plugins.sh
 source $HOME/.zsrc/func.sh
 source $HOME/.zsrc/kubecomp.sh
 source $HOME/.zsrc/helmcomp.sh
+source $HOME/.zsrc/stackcomp.sh
 
-# for zsh (ref: http://news.mynavi.jp/column/zsh/001)
 autoload -U compinit					# for tab supplement
 autoload -Uz colors						# use color scheme automatically
 autoload -Uz vcs_info         # for use VCS(Version Control System)
-compinit
-setopt auto_pushd						  # supplement for cd command (using history)
+compinit setopt auto_pushd		# supplement for cd command (using history)
 setopt auto_menu              # show list up candidates of supplement automatically
 setopt auto_list              # show list up candidates of supplement by list
 setopt list_types             # show kind of supplement
@@ -29,12 +28,11 @@ bindkey "^P" history-incremental-search-backward
 bindkey "^N" history-incremental-search-forward
 
 # for using color scheme
-export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
-#
+
 # PROMPT="%/%% "
 PROMPT="%B%F{111}${HOST}: %~%f%b
-%F{040}${USER}%f%B%F{041} ❯❯%f%b "
+%F{040}${USER}%f%B%F{041} >>%f%b "
 #RPROMPT="%F{158}[%D{%m/%d %T}]%f"
 SPROMPT="%r is correct? [n,y,a,e]: "
 
@@ -42,6 +40,8 @@ SPROMPT="%r is correct? [n,y,a,e]: "
 zstyle ':completion:*:*:kill:*:process' list-colors '=(#b) #([%0-9])*=0=01;31'
 zstyle ':completion:*' menu select
 zstyle ':completion:*' use-cache yes
+
+powerline-daemon -q
 
 screenfetch
 
@@ -67,3 +67,9 @@ screenfetch
 #if type zprof > /dev/null 2>&1; then
   #zprof | less
 #fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/takahiro/google-cloud-sdk/path.zsh.inc' ]; then . '/home/takahiro/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/takahiro/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/takahiro/google-cloud-sdk/completion.zsh.inc'; fi

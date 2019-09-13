@@ -13,40 +13,44 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export PATH=$PATH:
+export LC_ALL=C
+
+# fcitx
+export GTK_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export QT_IM_MODULE=fcitx
 path=($path $HOME/.cabal/bin(N-/))
 
-#rbenv
-eval "$(rbenv init -)"
-export PATH="$PATH:$HOME/.rbenv/shims"
-path=($path $(ruby -e 'print Gem.user_dir')/bin(N-/))
+# awscli
+path=($path $HOME/.local/bin(N-/))
 
 # golang
 export GOPATH=$HOME/go
 path=($path $GOPATH/bin(N-/))
 
+# rust
+export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+path=($path $HOME/.carbo/bin(N-/))
+
 # Cargo
 path=($path $HOME/.cargo/bin(N-/))
 
-# Python version management: pyenv.
-export PYENV_ROOT="$HOME/.pyenv"
-path=($path $PYENV_ROOT/bin(N-/))
-eval "$(pyenv init -)"
-
 # for Neovim
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # for git-radar
 path=($path $HOME/.zsh/git-radar(N-/))
 export GIT_RADAR_FETCH_TIME=30
 
+# for ruby
+path=($path $HOME/.gem/ruby/2.6.0/bin(N-/))
+
 # for yarn
 path=($path `yarn global bin`(N-/))
 
-export LANG=ja_JP.UTF-8
 export EDITOR=nvim
 RPROMPT="$RPROMPT: \S(git-radar --zsh--fetch)"
-
 
 ### aliases ###
 if [ -x "`which exa`" ]; then   # check existance of command
